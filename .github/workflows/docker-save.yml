@@ -17,13 +17,13 @@ jobs:
     # 省略登录到 Docker Hub 的步骤
 
     - name: Pull Docker image
-      run: docker pull mayanghua/instock
+      run: docker pull rhasspy/rhasspy
 
     - name: Save Docker image to file
-      run: docker save -o mayanghua_instock.tar mayanghua/instock
+      run: docker save -o rhasspy.tar rhasspy/rhasspy
 
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: mayanghua_instock
-        path: mayanghua_instock.tar
+        name: rhasspy
+        path: rhasspy.tar
